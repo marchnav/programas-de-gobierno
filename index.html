@@ -153,7 +153,7 @@
       font-weight: 700;
     }
 
-    /* Sección 2: tablas internas, ahora una sobre otra y sin scroll */
+    /* Sección 2: tablas internas, una sobre otra */
     .internal-grid {
       display: flex;
       flex-direction: column;
@@ -187,7 +187,6 @@
       margin: 0 0 10px;
     }
 
-    /* Table wrapper sin scroll vertical para sección 2 */
     .table-wrapper {
       border-radius: 14px;
       border: 1px solid #e2e8f0;
@@ -226,15 +225,16 @@
       letter-spacing: 0.03em;
     }
 
+    /* Encabezados y celdas numéricos centrados */
+    th.num-header,
+    td.num {
+      text-align: center;
+    }
+
     td.word {
       font-weight: 700;
       text-transform: uppercase;
       color: #0f172a;
-    }
-
-    td.num {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
     }
 
     tbody tr:nth-child(even) {
@@ -353,7 +353,7 @@
       <p class="subtitle">
         Análisis cuantitativo de las palabras más utilizadas en los programas de 
         <strong>Jeannette Jara</strong> y <strong>José Antonio Kast</strong>, 
-        combinando frecuencias absolutas y relativas (por cada 1.000 palabras).
+        usando frecuencias relativas (menciones por cada 1.000 palabras).
       </p>
       <div class="badge-row">
         <div class="badge">
@@ -417,9 +417,9 @@
     <section class="section">
       <h2 class="section-title">2. Qué domina en cada programa (visión interna)</h2>
       <p class="section-text">
-        A continuación se muestran las 15 palabras más frecuentes en cada programa, con su conteo 
-        absoluto y su frecuencia relativa por cada 1.000 palabras del mismo texto. Esto permite ver 
-        qué conceptos se repiten más dentro de cada programa de forma independiente.
+        A continuación se muestran las 15 palabras más frecuentes en cada programa, con su frecuencia 
+        relativa por cada 1.000 palabras del mismo texto. Esto permite ver qué conceptos se repiten 
+        más dentro de cada programa de forma independiente.
       </p>
 
       <div class="internal-grid">
@@ -435,55 +435,54 @@
                 <tr>
                   <th>#</th>
                   <th>Palabra</th>
-                  <th>Abs.</th>
-                  <th>Por 1.000 palabras</th>
+                  <th class="num-header">Por 1.000 palabras</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td><td class="word">MEDIDA</td><td class="num">393</td><td class="num">14,55</td>
+                  <td>1</td><td class="word">MEDIDA</td><td class="num">14,55</td>
                 </tr>
                 <tr>
-                  <td>2</td><td class="word">PERSONAS</td><td class="num">220</td><td class="num">8,14</td>
+                  <td>2</td><td class="word">PERSONAS</td><td class="num">8,14</td>
                 </tr>
                 <tr>
-                  <td>3</td><td class="word">CHILE</td><td class="num">165</td><td class="num">6,11</td>
+                  <td>3</td><td class="word">CHILE</td><td class="num">6,11</td>
                 </tr>
                 <tr>
-                  <td>4</td><td class="word">NACIONAL</td><td class="num">154</td><td class="num">5,70</td>
+                  <td>4</td><td class="word">NACIONAL</td><td class="num">5,70</td>
                 </tr>
                 <tr>
-                  <td>5</td><td class="word">SALUD</td><td class="num">139</td><td class="num">5,15</td>
+                  <td>5</td><td class="word">SALUD</td><td class="num">5,15</td>
                 </tr>
                 <tr>
-                  <td>6</td><td class="word">SEGURIDAD</td><td class="num">139</td><td class="num">5,15</td>
+                  <td>6</td><td class="word">SEGURIDAD</td><td class="num">5,15</td>
                 </tr>
                 <tr>
-                  <td>7</td><td class="word">PAÍS</td><td class="num">136</td><td class="num">5,03</td>
+                  <td>7</td><td class="word">PAÍS</td><td class="num">5,03</td>
                 </tr>
                 <tr>
-                  <td>8</td><td class="word">DESARROLLO</td><td class="num">135</td><td class="num">5,00</td>
+                  <td>8</td><td class="word">DESARROLLO</td><td class="num">5,00</td>
                 </tr>
                 <tr>
-                  <td>9</td><td class="word">SISTEMA</td><td class="num">120</td><td class="num">4,44</td>
+                  <td>9</td><td class="word">SISTEMA</td><td class="num">4,44</td>
                 </tr>
                 <tr>
-                  <td>10</td><td class="word">EDUCACIÓN</td><td class="num">104</td><td class="num">3,85</td>
+                  <td>10</td><td class="word">EDUCACIÓN</td><td class="num">3,85</td>
                 </tr>
                 <tr>
-                  <td>11</td><td class="word">ACCESO</td><td class="num">103</td><td class="num">3,81</td>
+                  <td>11</td><td class="word">ACCESO</td><td class="num">3,81</td>
                 </tr>
                 <tr>
-                  <td>12</td><td class="word">SOCIAL</td><td class="num">101</td><td class="num">3,74</td>
+                  <td>12</td><td class="word">SOCIAL</td><td class="num">3,74</td>
                 </tr>
                 <tr>
-                  <td>13</td><td class="word">ATENCIÓN</td><td class="num">92</td><td class="num">3,41</td>
+                  <td>13</td><td class="word">ATENCIÓN</td><td class="num">3,41</td>
                 </tr>
                 <tr>
-                  <td>14</td><td class="word">JUSTICIA</td><td class="num">91</td><td class="num">3,37</td>
+                  <td>14</td><td class="word">JUSTICIA</td><td class="num">3,37</td>
                 </tr>
                 <tr>
-                  <td>15</td><td class="word">CUMPLE</td><td class="num">88</td><td class="num">3,26</td>
+                  <td>15</td><td class="word">CUMPLE</td><td class="num">3,26</td>
                 </tr>
               </tbody>
             </table>
@@ -502,55 +501,54 @@
                 <tr>
                   <th>#</th>
                   <th>Palabra</th>
-                  <th>Abs.</th>
-                  <th>Por 1.000 palabras</th>
+                  <th class="num-header">Por 1.000 palabras</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td><td class="word">CHILE</td><td class="num">80</td><td class="num">10,93</td>
+                  <td>1</td><td class="word">CHILE</td><td class="num">10,93</td>
                 </tr>
                 <tr>
-                  <td>2</td><td class="word">PAÍS</td><td class="num">60</td><td class="num">8,20</td>
+                  <td>2</td><td class="word">PAÍS</td><td class="num">8,20</td>
                 </tr>
                 <tr>
-                  <td>3</td><td class="word">PERSONAS</td><td class="num">43</td><td class="num">5,88</td>
+                  <td>3</td><td class="word">PERSONAS</td><td class="num">5,88</td>
                 </tr>
                 <tr>
-                  <td>4</td><td class="word">FAMILIAS</td><td class="num">31</td><td class="num">4,24</td>
+                  <td>4</td><td class="word">FAMILIAS</td><td class="num">4,24</td>
                 </tr>
                 <tr>
-                  <td>5</td><td class="word">GOBIERNO</td><td class="num">31</td><td class="num">4,24</td>
+                  <td>5</td><td class="word">GOBIERNO</td><td class="num">4,24</td>
                 </tr>
                 <tr>
-                  <td>6</td><td class="word">SEGURIDAD</td><td class="num">29</td><td class="num">3,96</td>
+                  <td>6</td><td class="word">SEGURIDAD</td><td class="num">3,96</td>
                 </tr>
                 <tr>
-                  <td>7</td><td class="word">SOCIAL</td><td class="num">27</td><td class="num">3,69</td>
+                  <td>7</td><td class="word">SOCIAL</td><td class="num">3,69</td>
                 </tr>
                 <tr>
-                  <td>8</td><td class="word">DESARROLLO</td><td class="num">27</td><td class="num">3,69</td>
+                  <td>8</td><td class="word">DESARROLLO</td><td class="num">3,69</td>
                 </tr>
                 <tr>
-                  <td>9</td><td class="word">PÚBLICO</td><td class="num">27</td><td class="num">3,69</td>
+                  <td>9</td><td class="word">PÚBLICO</td><td class="num">3,69</td>
                 </tr>
                 <tr>
-                  <td>10</td><td class="word">SALUD</td><td class="num">26</td><td class="num">3,55</td>
+                  <td>10</td><td class="word">SALUD</td><td class="num">3,55</td>
                 </tr>
                 <tr>
-                  <td>11</td><td class="word">NACIONAL</td><td class="num">26</td><td class="num">3,55</td>
+                  <td>11</td><td class="word">NACIONAL</td><td class="num">3,55</td>
                 </tr>
                 <tr>
-                  <td>12</td><td class="word">RECUPERAR</td><td class="num">25</td><td class="num">3,42</td>
+                  <td>12</td><td class="word">RECUPERAR</td><td class="num">3,42</td>
                 </tr>
                 <tr>
-                  <td>13</td><td class="word">AÑOS</td><td class="num">24</td><td class="num">3,28</td>
+                  <td>13</td><td class="word">AÑOS</td><td class="num">3,28</td>
                 </tr>
                 <tr>
-                  <td>14</td><td class="word">VIDA</td><td class="num">24</td><td class="num">3,28</td>
+                  <td>14</td><td class="word">VIDA</td><td class="num">3,28</td>
                 </tr>
                 <tr>
-                  <td>15</td><td class="word">FUERZA</td><td class="num">23</td><td class="num">3,14</td>
+                  <td>15</td><td class="word">FUERZA</td><td class="num">3,14</td>
                 </tr>
               </tbody>
             </table>
@@ -572,7 +570,7 @@
         términos como <em>familias</em>, <em>vida</em>, <em>fuerza</em> y <em>recuperar</em>. El registro 
         se inclina más hacia una <strong>narrativa identitaria y emocional</strong>, mientras que 
         conceptos como <em>seguridad</em>, <em>desarrollo</em>, <em>salud</em> y <em>social</em> también 
-        están presentes pero sin una palabra técnica equivalente a “medida” que monopolice el discurso.
+        son relevantes pero sin una palabra técnica equivalente a “medida” que monopolice el discurso.
       </p>
     </section>
 
@@ -592,83 +590,63 @@
             <thead>
               <tr>
                 <th>Palabra</th>
-                <th class="compare-th-jara">Jara – Abs.</th>
-                <th class="compare-th-jara">Jara – por 1.000</th>
-                <th class="compare-th-kast">Kast – Abs.</th>
-                <th class="compare-th-kast">Kast – por 1.000</th>
+                <th class="compare-th-jara num-header">Jara – por 1.000</th>
+                <th class="compare-th-kast num-header">Kast – por 1.000</th>
                 <th>Mayor densidad</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="word">CHILE</td>
-                <td class="num">165</td>
                 <td class="num">6,11</td>
-                <td class="num">80</td>
                 <td class="num">10,93</td>
                 <td><span class="tag tag-kast">Kast</span></td>
               </tr>
               <tr>
                 <td class="word">PAÍS</td>
-                <td class="num">136</td>
                 <td class="num">5,03</td>
-                <td class="num">60</td>
                 <td class="num">8,20</td>
                 <td><span class="tag tag-kast">Kast</span></td>
               </tr>
               <tr>
                 <td class="word">PERSONAS</td>
-                <td class="num">220</td>
                 <td class="num">8,14</td>
-                <td class="num">43</td>
                 <td class="num">5,88</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">NACIONAL</td>
-                <td class="num">154</td>
                 <td class="num">5,70</td>
-                <td class="num">26</td>
                 <td class="num">3,55</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">SEGURIDAD</td>
-                <td class="num">139</td>
                 <td class="num">5,15</td>
-                <td class="num">29</td>
                 <td class="num">3,96</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">SALUD</td>
-                <td class="num">139</td>
                 <td class="num">5,15</td>
-                <td class="num">26</td>
                 <td class="num">3,55</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">DESARROLLO</td>
-                <td class="num">135</td>
                 <td class="num">5,00</td>
-                <td class="num">27</td>
                 <td class="num">3,69</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">SISTEMA</td>
-                <td class="num">120</td>
                 <td class="num">4,44</td>
-                <td class="num">22</td>
                 <td class="num">3,01</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
               <tr>
                 <td class="word">SOCIAL</td>
-                <td class="num">101</td>
                 <td class="num">3,74</td>
-                <td class="num">27</td>
                 <td class="num">3,69</td>
                 <td><span class="tag tag-jara">Jara</span></td>
               </tr>
